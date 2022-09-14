@@ -24,7 +24,7 @@ class Quiz(db.Model):
     answer: str
     
     id = db.Column(db.Integer, primary_key=True)
-    answer = db.Column(db.Text, nullable=False)
+    answer = db.Column(db.JSON, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     
 @dataclass

@@ -1,6 +1,6 @@
 from flask import jsonify, request
 from db_setup import db, app, User, Quiz, Distance
-import quiz_config
+from quiz_config import app_host
 import service
 
 
@@ -28,5 +28,14 @@ def add_quiz(user_id):
 def get_nearest(user_id):
     pass
 
+# solo per debug
+@app.route("/distance", methods=['GET'])
+def list_distances():
+    from db_setup import Distance
+    return Distance.query.all()
+
+
+
+
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', threaded=True)
+    app.run(host=app_host, threaded=True)

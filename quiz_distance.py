@@ -5,7 +5,7 @@ def calc_distance(user_id: str):
     print("Calc distance")
 
 '''
-# { persona0: { categoriax: {domanda0: punteggio, domanda1: punteggio } }
+# { persona0: {domanda0: punteggio, domanda1: punteggio } }
 f1 = open("risposte_elias.json")
 f2 = open("risposte_andrea.json")
 
