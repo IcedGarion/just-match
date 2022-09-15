@@ -12,7 +12,7 @@ def get_user(user_id: str):
 def create_user(user):
     new_user = User(username=user["username"], email=user["email"])
     
-    # TODO: check se esiste gia username/password
+    # TODO GESTIONE ERRORI: check se esiste gia username/password
     db.session.add(new_user)
     db.session.commit()
     return new_user
@@ -21,6 +21,7 @@ def create_quiz(user_id: str, quiz_json):
     # check se user_id passato esiste effettivamente
     existing_user = User.query.filter(User.id == user_id).all()
     if len(existing_user) == 0:
+        # TODO GESTIONE ERRORI
         return None
 
     # recupera evantuale quiz gia' esistente per quel user
@@ -51,14 +52,9 @@ def create_quiz(user_id: str, quiz_json):
 # da fare in thread parallelo
 def _calc_user_distance(user_quiz, all_other_quiz):
     distances_from_me = calc_distance(user_quiz, all_other_quiz)
-    
-    
-    # TODO: manca da: quando uno inserisce un quiz (anche se lo aveva gia fatto), tutti gli altri ricalcolano la distanza verso di lui
-    
+
     # se userid1 sono io, aggiungi tutti quelli che trovi
-    # se userid1 non sono io, aggiungi solo quelli che hanno come userid2 = io
-    # ottimizzazione: questo si puo fare dentro calc_distance così ne puoi saltare qualcuno
-    
+    # se userid1 non sono io, aggiungi solo quelli che hanno come userid2 = io    
     for new_dist in distances_from_me:
         if new_dist.user1_id == user_quiz.user_id or (new_dist.user1_id != user_quiz.user_id and new_dist.user2_id == user_quiz.user_id):
             # se esisteva gia' una distanza fra i due user (caso in cui si inserisce un nuovo quiz), aggiorna quello esistente
