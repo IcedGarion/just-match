@@ -22,12 +22,23 @@ def create_user(user):
     db.session.add(new_user)
     db.session.commit()
     return new_user
+
+def get_nearest_users(user_id: str, top: int):
+    # check se user_id passato esiste effettivamente
+    existing_user = User.query.filter(User.id == user_id).all()
+    if len(existing_user) == 0:
+        raise AssertionError("User_id does not exists: {}".format(user_id))
+        
+    nearest_users = Distance.query.filter(Distance.user1_id == user_id).order_by(Distance.distance.asc()).limit(top).all()
+    
+    return nearest_users
+
     
 def create_quiz(user_id: str, quiz_json):
     # check se user_id passato esiste effettivamente
     existing_user = User.query.filter(User.id == user_id).all()
     if len(existing_user) == 0:
-        raise AssertionError("User_id does not exists: '{}'".format(user_id))
+        raise AssertionError("User_id does not exists: {}".format(user_id))
 
     # recupera evantuale quiz gia' esistente per quel user
     user_quiz = Quiz.query.filter(Quiz.user_id == user_id).all()

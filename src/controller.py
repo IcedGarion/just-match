@@ -30,9 +30,13 @@ def add_quiz(user_id):
     except AssertionError as e:
         return { "error":  "{}".format(str(e)) }, 404
     
-@app.route("/distance/<user_id>", methods=['GET'])
-def get_nearest(user_id):
-    pass
+@app.route("/distance/<user_id>/<top>", methods=['GET'])
+def get_nearest(user_id, top):
+    try:
+        nearest = service.get_nearest_users(user_id, top)
+        return jsonify(nearest)
+    except AssertionError as e:
+        return { "error":  "{}".format(str(e)) }, 404
 
 # solo per debug
 @app.route("/distance", methods=['GET'])
