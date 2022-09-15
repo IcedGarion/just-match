@@ -34,6 +34,9 @@ def list_distances():
     from db_setup import Distance
     return Distance.query.all()
 
+@app.route("/quiz", methods=['GET'])
+def list_quizzes():
+    return Quiz.query.all()
 
 
 

@@ -7,7 +7,7 @@ def get_all_users():
     return User.query.all()
     
 def get_user(user_id: str):
-    return User.query.filter_by(id=user_id).first()
+    return User.query.filter(User.id == user_id).first()
     
 def create_user(user):
     new_user = User(username=user["username"], email=user["email"])
@@ -17,38 +17,53 @@ def create_user(user):
     db.session.commit()
     return new_user
     
-def create_quiz(user_id: str, quiz):
-    # TODO: check se user_id passato esiste effettivamente
-    user = User.query.filter_by(id=user_id).first()
-    new_quiz = Quiz(answer=quiz, user_id=user.id)
-    db.session.add(new_quiz)
-    db.session.commit()
-    
-    
-    # nuovo quiz: calcola le distanze fra quiz utente e tutti gli altri
-    
-    # TODO
-    # Da ottimizzare: calcolare distanze solo per il nuovo utente verso tutti gli altri + tutti gli altri solo verso il nuovo utente
-    # Qua per ora calcola tutte le distanze di tutti tutti
-    # da spostare in quiz_distance
-    all_quiz = Quiz.query.all()
-    for quiz in all_quiz:
-        risposte = [[int(risposta['risposta'])] for risposta in quiz.answer ]
-        
-        altri_quiz = Quiz.query.all()
-        for altro_quiz in altri_quiz:
-            altre_risposte = [[int(risposta['risposta'])] for risposta in altro_quiz.answer ]
-            distanza = np.linalg.norm(np.array(risposte) - np.array(altre_risposte))
-            print(user_id, altro_quiz.user_id, distanza)
-            
-            # salva su db distanze appena calcolate
-            new_distance = Distance(user1_id=quiz.user_id, user2_id=altro_quiz.user_id, distance=distanza)
-            db.session.add(new_distance)
-            db.session.commit()
+def create_quiz(user_id: str, quiz_json):
+    # check se user_id passato esiste effettivamente
+    existing_user = User.query.filter(User.id == user_id).all()
+    if len(existing_user) == 0:
+        return None
 
-    return new_quiz
+    # recupera evantuale quiz gia' esistente per quel user
+    user_quiz = Quiz.query.filter(Quiz.user_id == user_id).all()
     
+    # Aggiorna quiz gia esistente
+    if len(user_quiz) != 0:
+        user_quiz = user_quiz[0]
+        user_quiz.answer = quiz_json
+        db.session.commit()
+    
+    # Aggiunge nuovo quiz
+    else:
+        user_quiz = Quiz(answer=quiz_json, user_id=existing_user[0].id)
+        db.session.add(user_quiz)
+        db.session.commit()
+    
+    
+    # _calc_user_distance
+    # nuovo quiz: calcola le distanze fra quiz utente e tutti gli altri
+    all_other_quiz = Quiz.query.filter(Quiz.user_id != user_id).all()
+    
+    _calc_user_distance(user_quiz, all_other_quiz)
+    
+    return user_quiz
+
 
 # da fare in thread parallelo
-def _calc_user_distance(user_id, quizzes):
-    pass
+def _calc_user_distance(user_quiz, all_other_quiz):
+    distances_from_me = calc_distance(user_quiz, all_other_quiz)
+    
+    
+    # TODO: manca da: quando uno inserisce un quiz (anche se lo aveva gia fatto), tutti gli altri ricalcolano la distanza verso di lui
+    
+    # se userid1 sono io, aggiungi tutti quelli che trovi
+    # se userid1 non sono io, aggiungi solo quelli che hanno come userid2 = io
+    # ottimizzazione: questo si puo fare dentro calc_distance così ne puoi saltare qualcuno
+    
+    for new_dist in distances_from_me:
+        if new_dist.user1_id == user_quiz.user_id or (new_dist.user1_id != user_quiz.user_id and new_dist.user2_id == user_quiz.user_id):
+            # se esisteva gia' una distanza fra i due user (caso in cui si inserisce un nuovo quiz), aggiorna quello esistente
+            existing_distance = Distance.query.filter(Distance.user1_id == new_dist.user1_id and Distance.user2_id == new_dist.user2_id).all()
+            if len(existing_distance) == 0:
+                db.session.add(new_dist)            
+
+    db.session.commit()

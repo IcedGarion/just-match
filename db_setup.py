@@ -29,14 +29,12 @@ class Quiz(db.Model):
     
 @dataclass
 class Distance(db.Model):
-    id: int
     user1_id: int
     user2_id: int
     distance: float
-    
-    id = db.Column(db.Integer, primary_key = True)
-    user1_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    user2_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+    user1_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key = True)
+    user2_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key = True)
     distance = db.Column(db.Float, nullable=False)
     
 db.create_all()

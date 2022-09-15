@@ -1,8 +1,20 @@
 import numpy as np
-import json
+from db_setup import Quiz, Distance
 
-def calc_distance(user_id: str):
-    print("Calc distance")
+def calc_distance(my_quiz: Quiz, other_quizzes):
+    risposte = [[int(risposta['risposta'])] for risposta in my_quiz.answer ]
+    distanze = []
+
+    for altro_quiz in other_quizzes:
+        altre_risposte = [[int(risposta['risposta'])] for risposta in altro_quiz.answer ]
+        distanza = np.linalg.norm(np.array(risposte) - np.array(altre_risposte))
+        
+        
+        # salva su db distanze appena calcolate
+        new_distance = Distance(user1_id=my_quiz.user_id, user2_id=altro_quiz.user_id, distance=distanza)
+        distanze.append(new_distance)
+
+    return distanze
 
 '''
 # { persona0: {domanda0: punteggio, domanda1: punteggio } }
@@ -32,4 +44,24 @@ for persona,risp in risposte.items():
         if(persona != altra_persona):
             distanza = (np.linalg.norm(np.array(risp) - np.array(altre_risp)) / max_distanza_possibile)
             distanze[persona].update({ altra_persona: distanza })
+'''
+
+'''
+
+    for quiz in all_quiz:
+        risposte = [[int(risposta['risposta'])] for risposta in quiz.answer ]
+        
+        altri_quiz = Quiz.query.all()
+        for altro_quiz in altri_quiz:
+            altre_risposte = [[int(risposta['risposta'])] for risposta in altro_quiz.answer ]
+            distanza = np.linalg.norm(np.array(risposte) - np.array(altre_risposte))
+            print(user_id, altro_quiz.user_id, distanza)
+            
+            # salva su db distanze appena calcolate
+            new_distance = Distance(user1_id=quiz.user_id, user2_id=altro_quiz.user_id, distance=distanza)
+            db.session.add(new_distance)
+            db.session.commit()
+
+    return new_quiz
+    
 '''
