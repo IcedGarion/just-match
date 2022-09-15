@@ -12,7 +12,11 @@ def get_user(user_id: str):
 def create_user(user):
     new_user = User(username=user["username"], email=user["email"])
     
-    # TODO GESTIONE ERRORI: check se esiste gia username/password
+    # check se esiste gia' username
+    existing_user = User.query.filter(User.username == new_user.username).all()
+    if len(existing_user) != 0:
+        raise AssertionError("Username already exists: '{}'".format(new_user.username))
+    
     db.session.add(new_user)
     db.session.commit()
     return new_user
@@ -22,7 +26,7 @@ def create_quiz(user_id: str, quiz_json):
     existing_user = User.query.filter(User.id == user_id).all()
     if len(existing_user) == 0:
         # TODO GESTIONE ERRORI
-        return None
+        raise AssertionError("User_id does not exists: '{}'".format(user_id))
 
     # recupera evantuale quiz gia' esistente per quel user
     user_quiz = Quiz.query.filter(Quiz.user_id == user_id).all()

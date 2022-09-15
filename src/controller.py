@@ -1,4 +1,4 @@
-from flask import jsonify, request
+from flask import jsonify, request, abort, Response
 from db_setup import db, app, User, Quiz, Distance
 from quiz_config import app_host
 import service
@@ -16,13 +16,19 @@ def list_user(user_id):
 
 @app.route("/users", methods=['POST'])
 def add_user():
-    new_user = service.create_user(request.json)
-    return jsonify(new_user)
+    try:
+        new_user = service.create_user(request.json)
+        return jsonify(new_user)
+    except AssertionError as e:
+        return { "error":  "{}".format(str(e)) }, 409
 
 @app.route("/quiz/<user_id>", methods=['POST'])
 def add_quiz(user_id):
-    new_quiz = service.create_quiz(user_id, request.json)
-    return jsonify(new_quiz)
+    try:
+        new_quiz = service.create_quiz(user_id, request.json)
+        return jsonify(new_quiz)
+    except AssertionError as e:
+        return { "error":  "{}".format(str(e)) }, 404
     
 @app.route("/distance/<user_id>", methods=['GET'])
 def get_nearest(user_id):
