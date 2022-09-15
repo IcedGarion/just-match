@@ -1,5 +1,7 @@
 from db_setup import db, app, User, Quiz, Distance
 from quiz_distance import calc_distance
+from threading import Thread
+from time import sleep
 import numpy as np
 
 
@@ -25,13 +27,13 @@ def create_quiz(user_id: str, quiz_json):
     # check se user_id passato esiste effettivamente
     existing_user = User.query.filter(User.id == user_id).all()
     if len(existing_user) == 0:
-        # TODO GESTIONE ERRORI
         raise AssertionError("User_id does not exists: '{}'".format(user_id))
 
     # recupera evantuale quiz gia' esistente per quel user
     user_quiz = Quiz.query.filter(Quiz.user_id == user_id).all()
     
-    # Aggiorna quiz gia esistente
+    # Aggiorna quiz gia esistente rimpiazzando
+    # TODO: quiz andrebbe diviso in domande (tabella a parte) e rimpiazzate solo le parti modificate o aggiunte quelle mancanti
     if len(user_quiz) != 0:
         user_quiz = user_quiz[0]
         user_quiz.answer = quiz_json
@@ -43,18 +45,15 @@ def create_quiz(user_id: str, quiz_json):
         db.session.add(user_quiz)
         db.session.commit()
     
-    
-    # _calc_user_distance
     # nuovo quiz: calcola le distanze fra quiz utente e tutti gli altri
-    all_other_quiz = Quiz.query.filter(Quiz.user_id != user_id).all()
-    
-    _calc_user_distance(user_quiz, all_other_quiz)
+    Thread(target = _calc_user_distance, args = (user_quiz, )).start()
     
     return user_quiz
 
 
-# da fare in thread parallelo
-def _calc_user_distance(user_quiz, all_other_quiz):
+def _calc_user_distance(user_quiz):
+    sleep(1)
+    all_other_quiz = Quiz.query.filter(Quiz.user_id != user_quiz.user_id).all()
     distances_from_me = calc_distance(user_quiz, all_other_quiz)
 
     # se userid1 sono io, aggiungi tutti quelli che trovi
