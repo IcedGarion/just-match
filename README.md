@@ -24,3 +24,40 @@ curl -X POST localhost:5000/quiz/1 -H 'Content-Type: application/json' -d @rispo
 curl -X POST localhost:5000/quiz/2 -H 'Content-Type: application/json' -d @risposte_elias.json
 <br>
 curl localhost:5000/distance
+
+## API
+### List users
+Lists all users.<br><br>
+`GET /users`
+
+
+### List user
+Lists single user specified by "id".<br><br>
+`GET /users/<id>`
+
+### Create user
+Create new user with payload json data.<br><br>
+`POST /users`<br><br>
+Example json:<br>
+`{ "username": "andrea", "email": "andrea"}`
+
+### Create User Quiz
+Create a new quiz answer for user specified by "id" with payload json data.<br><br>
+`POST /quiz/<user_id>`<br><br>
+Example json:<br>
+`[
+    {
+        "question": "Sono in grado di chiudere gli occhi e raffigurarmi oggetti, luoghi o  avvenimenti",
+        "risposta": "4",
+        "id": "0"
+    },
+    {
+        "question": "Leggo più facilmente cartine, tabelle e diagrammi piuttosto che  indicazioni scritte",
+        "risposta": "4",
+        "id": "1"
+    }
+]`
+
+### Get nearest user
+Return the top x "top" users nearest to the user specified by "id".<br><br>
+`GET /distance/<user_id>/<top>`
