@@ -1,0 +1,14 @@
+PESI							GRUPPO DI AMICI	|	AMICO SINGOLO	|	AMORE	|	CENE GRUPPO	|	CENE SINGOLE AMICI	|	VIAGGIO GRUPPO	|	VIAGGIO SINGOLO	|
+_________________________________________________________________________________________________________________________________________________________________
+intelligenza linguistica				1				1				1				1					1					1						1
+intelligenza strategica					0				0				1				0					0					0.5						1
+intelligenza interpersonale				1				1				1				1					1					1						1
+intelligenza intrapersonale				1				1				1				1					1					1						1
+intelligenza comportamentale			1				1				1				1					1					1						1
+intelligenza cinestetica				0				0				1				0					0					1						1
+intelligenza esistenziale				0.5				0.5				1				0					1					0.8						1
+abitudini								1				1				1				0.5					1					1						1
+personalita - attitudine				0				1				1				0.5					1					1						1
+autostima								1				1				1				1					1					1						1
+interessi								1				1				1				0.5					1					1						1
+aspetto									0				0				1				0					0					0						1
