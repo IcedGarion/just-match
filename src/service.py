@@ -52,10 +52,9 @@ def create_quiz(user_id: str, quiz_json):
         db.session.commit()
     
     # Aggiunge nuovo quiz
-    # TODO: mancano le category in json quiz
     else:
-        new_quiz = [ UserQuiz(answer=answer["question"], question_id=answer["id"], user_id=user_id) for answer in quiz_json ]
-        db.session.add_all(new_quiz)
+        user_quiz = [ UserQuiz(answer=answer["risposta"], question_id=answer["id"], user_id=user_id) for answer in quiz_json ]
+        db.session.add_all(user_quiz)
         db.session.commit()
     
     # nuovo quiz: calcola le distanze fra quiz utente e tutti gli altri
@@ -66,6 +65,12 @@ def create_quiz(user_id: str, quiz_json):
 
 
 def _calc_user_distance(user_quiz):
+    '''
+        TODO: aggiungere le categorie.
+        Per ciascuna categoria va calcolata la distanza e poi sommate (con peso) tutte le distanze per categorie per ottenere la distanza finale tot
+    '''
+
+
     # TODO: fare in modo che parta solo quando ha finito di inserire il nuovo quiz qua sopra ?
     sleep(2)
 
