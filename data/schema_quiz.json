@@ -1,0 +1,47 @@
+[
+    {
+		"category": "1",
+		"quiz": [
+		    {
+				"question": "Sono in grado di chiudere gli occhi e raffigurarmi oggetti, luoghi o  avvenimenti",
+				"id": "0"
+			},
+			{
+				"question": "Leggo più facilmente cartine, tabelle e diagrammi piuttosto che  indicazioni scritte",
+				"id": "1"
+			},
+			{
+				"question": "Sogno ad occhi aperti più dei miei coetanei",
+				"id": "2"
+			},
+			{
+				"question": "Mi piacciono le attività artistiche",
+				"id": "3"
+			},
+			{
+				"question": "Disegno figure interessanti",
+				"id": "4"
+			},
+			{
+				"question": "Mi piace vedere film, diapositive o altre rappresentazioni visive",
+				"id": "5"
+			},
+			{
+				"question": " Mi piace fare puzzles, labirinti, dedali o analoghe attività visive",
+				"id": "6"
+			},
+			{
+				"question": "Creo interessanti costruzioni tridimensionali",
+				"id": "7"
+			},
+			{
+				"question": "Quando leggo mi dicono di più̀ le immagini delle parole",
+				"id": "8"
+			},
+			{
+				"question": "Scarabocchio su libri di esercizi, schede e altro materiale",
+				"id": "9"
+			}
+		]
+    }
+]
