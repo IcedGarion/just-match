@@ -1,19 +1,18 @@
 import numpy as np
-from db_setup import Quiz, Distance
+from db_setup import UserQuiz, Distance
 
 # TODO: normalizzazione (serve calcolare il denominatore, come costante)
-def calc_distance(my_quiz: Quiz, other_quizzes):
-    risposte = [[int(risposta['risposta'])] for risposta in my_quiz.answer ]
+def calc_distance(my_quiz, another_users_quiz):
+    mie_risposte = [[int(risposta.answer)] for risposta in my_quiz ]
+    sue_risposte = [[int(risposta.answer)] for risposta in another_users_quiz ]
     distanze = []
 
-    for altro_quiz in other_quizzes:
-        altre_risposte = [[int(risposta['risposta'])] for risposta in altro_quiz.answer ]
-        distanza = np.linalg.norm(np.array(risposte) - np.array(altre_risposte))
-        
-        # crea oggetti distanze da salvare poi su db
-        new_distance = Distance(user1_id=my_quiz.user_id, user2_id=altro_quiz.user_id, distance=distanza)
-        reverse_new_distance = Distance(user2_id=my_quiz.user_id, user1_id=altro_quiz.user_id, distance=distanza)
-        distanze.append(new_distance)
-        distanze.append(reverse_new_distance)
+    distanza = np.linalg.norm(np.array(mie_risposte) - np.array(sue_risposte))
+   
+    # crea oggetti distanze da salvare poi su db
+    new_distance = Distance(user1_id=my_quiz[0].user_id, user2_id=another_users_quiz[0].user_id, distance=distanza)
+    reverse_new_distance = Distance(user2_id=my_quiz[0].user_id, user1_id=another_users_quiz[0].user_id, distance=distanza)
+    distanze.append(new_distance)
+    distanze.append(reverse_new_distance)
 
     return distanze
