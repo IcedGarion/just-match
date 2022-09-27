@@ -1,4 +1,4 @@
-from db_setup import db, app, User, UserQuiz, Distance
+from db_setup import db, app, User, UserQuiz, Quiz, Distance, Category
 from quiz_distance import calc_distance
 from threading import Thread
 from time import sleep
@@ -34,6 +34,7 @@ def get_nearest_users(user_id: str, top: int):
     return nearest_users
 
     
+# TODO: caso in cui si aggiungono soltanto 1+ risposte NUOVE? 
 def create_quiz(user_id: str, quiz_json):
     # check se user_id passato esiste effettivamente
     existing_user = User.query.filter(User.id == user_id).all()
@@ -53,7 +54,7 @@ def create_quiz(user_id: str, quiz_json):
     
     # Aggiunge nuovo quiz
     else:
-        user_quiz = [ UserQuiz(answer=answer["risposta"], question_id=answer["id"], user_id=user_id) for answer in quiz_json ]
+        user_quiz = sorted([ UserQuiz(answer=answer["risposta"], question_id=answer["id"], user_id=user_id) for answer in quiz_json ], key=lambda x: x.question_id)
         db.session.add_all(user_quiz)
         db.session.commit()
     
@@ -65,34 +66,33 @@ def create_quiz(user_id: str, quiz_json):
 
 
 def _calc_user_distance(user_quiz):
-    '''
-        TODO: aggiungere le categorie.
-        Per ciascuna categoria va calcolata la distanza e poi sommate (con peso) tutte le distanze per categorie per ottenere la distanza finale tot
-    '''
-
-
     # TODO: fare in modo che parta solo quando ha finito di inserire il nuovo quiz qua sopra ?
     sleep(2)
-
-    # prendere a gruppi di users il quiz e poi darlo in pasto al for qua sotto
-    # (serve calcolare la distinct sui user_id prima (escludendo il mio user_id), e poi fare ogni volta la query su userquiz prendendo solo un user_id alla volta
-    
+  
     # prende tutti gli altri user_id
     user_id = user_quiz[0].user_id
     users_ids = [ result[0] for result in UserQuiz.query.filter(UserQuiz.user_id != user_id).with_entities(UserQuiz.user_id).distinct().all() ]
     if len(users_ids) == 0:
         raise AssertionError("Not enough user quiz (1) to calculate distance")
 
-    # per ciascun altro user legge tutto il suo quiz e calcola distanza
+    # prende tutte le categorie
+    categories = [ x[0] for x in Category.query.with_entities(Category.id).distinct().all() ]
     distances_from_me = []
-    for other_user_id in users_ids:
-        other_user_quiz = UserQuiz.query.filter(UserQuiz.user_id == other_user_id).order_by(UserQuiz.question_id.asc()).all()
-        distances_from_me.extend(calc_distance(user_quiz, other_user_quiz))
+    
+    # per ciascuna categoria calcola le distanze
+    for category in categories:
+        # per ciascuna categoria estrae solo i quiz di quella categoria
+        question_ids_per_category = [ x[0] for x in Quiz.query.filter(Quiz.category_id == category).with_entities(Quiz.question_id).all() ]
+        user_category_quiz = [ quiz for quiz in user_quiz if quiz.question_id in question_ids_per_category ]
+    
+        # per ciascun altro user legge tutto il suo quiz (cambiando ogni volta la categoria) e calcola distanza
+        for other_user_id in users_ids:
+            other_user_category_quiz = [ x for x in UserQuiz.query.filter(UserQuiz.user_id == other_user_id).order_by(UserQuiz.question_id.asc()).all() if x.question_id in question_ids_per_category]
+            distances_from_me.extend(calc_distance(user_category_quiz, other_user_category_quiz, category))
 
     # se userid1 sono io, aggiungi tutti quelli che trovi
     # se userid1 non sono io, aggiungi solo quelli che hanno come userid2 = io    
     for new_dist in distances_from_me:
-        print(new_dist)
         if new_dist.user1_id == user_id or (new_dist.user1_id != user_id and new_dist.user2_id == user_id):
             # se esisteva gia' una distanza fra i due user (caso in cui si inserisce un nuovo quiz), aggiorna quello esistente
             existing_distance = Distance.query.filter(Distance.user1_id == new_dist.user1_id and Distance.user2_id == new_dist.user2_id).all()
