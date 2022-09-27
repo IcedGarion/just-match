@@ -18,18 +18,28 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), nullable=False)
 
+# Pesi categorie
+class Category(db.Model):
+    id: int
+    description: str
+    weight: float
+    
+    id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(250))
+    weight = db.Column(db.Float, nullable=False)
+
 # Schema quiz
 @dataclass
 class Quiz(db.Model):
     id: int
     question: str
     question_id: str
-    category: str
+    category_id: int
     
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.String(250), nullable=False)
     question_id = db.Column(db.String(10), unique=True, nullable=False)
-    category = db.Column(db.String(100), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
 
 # Risposte degli utenti al quiz
 @dataclass
