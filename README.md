@@ -13,7 +13,10 @@ pip3 install numpy
 python3 controller.py
 
 ## Test
-(data/test.sh)
+- create database model: `python3 controller.py`
+- (kill `python3 controller.py` / CTLR+C)
+- preload activity / category / quiz schema data: `python3 src/preload_quiz.py`
+- load quiz answers example (category 0 only: data/test.sh)<br>
 <br>
 curl -X POST localhost:5000/users -H 'Content-Type: application/json' -d '{"username": "andrea", "email": "andrea"}'
 <br>
@@ -30,7 +33,6 @@ curl localhost:5000/distance
 Lists all users.<br><br>
 `GET /users`
 
-
 ### List user
 Lists single user specified by "id".<br><br>
 `GET /users/<id>`
@@ -40,6 +42,15 @@ Create new user with payload json data.<br><br>
 `POST /users`<br><br>
 Example json:<br>
 `{ "username": "andrea", "email": "andrea"}`
+
+### List activities
+`GET /activity`
+
+### List categories
+`GET /category`
+
+### List Quiz schema
+`GET /quiz`
 
 ### Create User Quiz
 Create a new quiz answer for user specified by "id" with payload json data.<br><br>
@@ -67,6 +78,7 @@ Return the top x "top" users nearest to the user specified by "id".<br><br>
 ## Feature
 ### TODO2: Finire di inserire domande per le altre categorie
 ### E poi inserire dati quiz vero per almeno 10 utenti e testare se le distanze per activity funzionano
+### Normalizzare distanze categoria
 
 ## Codice
 ### Caso in cui si aggiungono soltanto 1+ risposte NUOVE? 

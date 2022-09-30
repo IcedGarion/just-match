@@ -1,6 +1,6 @@
 from flask import jsonify, request, abort, Response
 from werkzeug.exceptions import HTTPException
-from db_setup import db, app, User, Quiz, Distance
+from db_setup import db, app, User, Quiz, Distance, ActivityDistance
 from quiz_config import app_host
 import service
 
@@ -49,16 +49,21 @@ def get_nearest(user_id, activity_id, top):
     except AssertionError as e:
         return { "error":  "{}".format(str(e)) }, 404
 
+@app.route("/quiz", methods=['GET'])
+def list_quizzes():
+    return Quiz.query.all()
+
 
 # solo per debug
 @app.route("/distance", methods=['GET'])
 def list_distances():
     from db_setup import Distance
     return Distance.query.all()
-
-@app.route("/quiz", methods=['GET'])
-def list_quizzes():
-    return Quiz.query.all()
+    
+@app.route("/activity_distance", methods=['GET'])
+def list_global_distances():
+    from db_setup import Distance
+    return ActivityDistance.query.all()
 
 
 # error handling
