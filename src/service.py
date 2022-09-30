@@ -23,6 +23,12 @@ def create_user(user):
     db.session.commit()
     return new_user
 
+def get_all_activities():
+    return Activity.query.all()
+
+def get_all_categories():
+    return Category.query.all()
+
 def get_nearest_users(user_id: str, activity_id: int, top: int):
     # check se user_id passato esiste effettivamente
     existing_user = User.query.filter(User.id == user_id).all()

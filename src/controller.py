@@ -23,6 +23,16 @@ def add_user():
     except AssertionError as e:
         return { "error":  "{}".format(str(e)) }, 409
 
+@app.route("/activity", methods=['GET'])
+def list_activities():
+    activities = service.get_all_activities()
+    return jsonify(activities)
+
+@app.route("/category", methods=['GET'])
+def list_categories():
+    categories = service.get_all_categories()
+    return jsonify(categories)
+
 @app.route("/quiz/<int:user_id>", methods=['POST'])
 def add_quiz(user_id):
     try:
