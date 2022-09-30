@@ -82,12 +82,25 @@ class UserQuiz(db.Model):
 class Distance(db.Model):
     user1_id: int
     user2_id: int
-    distance: float
     category_id: int
+    distance: float
 
     user1_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key = True)
     user2_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key = True)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), primary_key = True)
     distance = db.Column(db.Float, nullable=False)
-    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
+
+# Distanze calcolate fra utenti, risultato di media fra le distanze per categoria, pesi dati dal tipo di attivita
+@dataclass
+class ActivityDistance(db.Model):
+    user1_id: int
+    user2_id: int
+    activity_id: int
+    distance: float
+    
+    user1_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key = True)
+    user2_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key = True)
+    activity_id = db.Column(db.Integer, db.ForeignKey('activity.id'), primary_key = True)
+    distance = db.Column(db.Float, nullable=False)
     
 db.create_all()

@@ -64,7 +64,15 @@ Return the top x "top" users nearest to the user specified by "id".<br><br>
 
 
 # TODO
+## Feature
+### Api per leggere quiz, categorie, attivita
+### check tipi dei parametri in controller
+### TODO2: Finire di inserire domande per le altre categorie
+
+## Codice
 ### Caso in cui si aggiungono soltanto 1+ risposte NUOVE? 
 ### Fare in modo che calcolo distanza per nuovo quiz parta solo quando ha finito di inserire il nuovo quiz
-### Calcolare distanza globale (non a livello di categoria). Fare una API apposta che prende input una attivita': calcola distanze globali coi pesi di quella attivita' rispetto a tutti gli altri user
-### Includere nella tabella delle categorie i vari pesi e usarli per fare distanza totale a seconda delle situazioni
+### Spostare i calcoli in file a parte (non nel service)
+
+## Errori
+### TODO1: Se user compila solo parte del quiz, quando calcola le distanze cerca comunque tutte le categorie. Fare in modo che i calcoli distanza per categoria e distanza globale usino solo le categorie compilate
