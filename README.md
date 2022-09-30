@@ -65,9 +65,8 @@ Return the top x "top" users nearest to the user specified by "id".<br><br>
 
 # TODO
 ## Feature
-### Api per leggere quiz, categorie, attivita
-### check tipi dei parametri in controller
 ### TODO2: Finire di inserire domande per le altre categorie
+### E poi inserire dati quiz vero per almeno 10 utenti e testare se le distanze per activity funzionano
 
 ## Codice
 ### Caso in cui si aggiungono soltanto 1+ risposte NUOVE? 
