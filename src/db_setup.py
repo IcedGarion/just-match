@@ -7,18 +7,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = quiz_config.db_connection_string
 db = SQLAlchemy(app)
 
-# Info utente
-@dataclass
-class User(db.Model):
-    id: int
-    username: str
-    email: str
-    
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), nullable=False)
 
-
+''' Tabelle schema '''
 # Tipi di attivita' 
 @dataclass
 class Activity(db.Model):
@@ -63,6 +53,40 @@ class Quiz(db.Model):
     question = db.Column(db.String(250), nullable=False)
     question_id = db.Column(db.String(10), unique=True, nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
+
+# Valori costanti (es, max e min answer value)
+@dataclass
+class Constant(db.Model):
+    id: int
+    name: str
+    value: str
+    
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(250))
+    value = db.Column(db.String(250), nullable=False)
+
+@dataclass
+class Normalization(db.Model):
+    id: int
+    category_id: str
+    value: float
+    
+    id = db.Column(db.Integer, primary_key=True)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
+    value = db.Column(db.Float, nullable=False)
+
+
+''' Tabelle dati '''
+# Info utente
+@dataclass
+class User(db.Model):
+    id: int
+    username: str
+    email: str
+    
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), nullable=False)
 
 # Risposte degli utenti al quiz
 @dataclass

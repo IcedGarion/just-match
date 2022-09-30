@@ -1,0 +1,12 @@
+[
+	{
+		"id": 0,
+		"name": "max_answer_value",
+		"value": "4"
+	},
+	{
+		"id": 1,
+		"name": "min_answer_value",
+		"value": "0"
+	}
+]

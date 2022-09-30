@@ -75,10 +75,13 @@ Return the top x "top" users nearest to the user specified by "id".<br><br>
 
 
 # TODO
+### Testare nuovo preload 
+
 ## Feature
 ### TODO2: Finire di inserire domande per le altre categorie
 ### E poi inserire dati quiz vero per almeno 10 utenti e testare se le distanze per activity funzionano
 ### Normalizzare distanze categoria
+### API per recuperare max e min answer value, in modo da poter validare le risposte (sia frontend che be)
 
 ## Codice
 ### Caso in cui si aggiungono soltanto 1+ risposte NUOVE? 
@@ -87,3 +90,4 @@ Return the top x "top" users nearest to the user specified by "id".<br><br>
 
 ## Errori
 ### TODO1: Se user compila solo parte del quiz, quando calcola le distanze cerca comunque tutte le categorie. Fare in modo che i calcoli distanza per categoria e distanza globale usino solo le categorie compilate
+### Cosi come succede per il calcolo distanze categoria, se un utente aggiorna quiz viene AGGIORNATA la distanza, va implementato anche per activityDistance: cioe se le distanze cambiano, deve poter aggiornare activityDistance se esiste gia, invece di "sovrascrivere" (cosa che non succederebbe perche' ci sarebbe primary key violation)
