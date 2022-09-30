@@ -1,0 +1,30 @@
+[
+	{
+		"id": 0,
+		"description": "Gruppo di amici"
+	},
+	{
+		"id": 1,
+		"description": "Amico singolo"
+	},
+	{
+		"id": 2,
+		"description": "Amore"
+	},
+	{
+		"id": 3,
+		"description": "Cene di gruppo"
+	},
+	{
+		"id": 4,
+		"description": "Cene singole amico"
+	},
+	{
+		"id": 5,
+		"description": "Viaggio di gruppo"
+	},
+	{
+		"id": 6,
+		"description": "Viaggio di coppia"
+	}
+]

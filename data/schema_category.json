@@ -1,6 +1,50 @@
 [
     {
-		"category": 0,
+		"id": 0,
 		"description": "Intelligenza linguistica"
+    },
+	{
+		"id": 1,
+		"description": "Intelligenza strategica"
+    },
+	{
+		"id": 2,
+		"description": "Intelligenza interpersonale"
+    },
+	{
+		"id": 3,
+		"description": "Intelligenza intrapersonale"
+    },
+	{
+		"id": 4,
+		"description": "Intelligenza comportamentale"
+    },
+	{
+		"id": 5,
+		"description": "Intelligenza cinestetica"
+    },
+	{
+		"id": 6,
+		"description": "Intelligenza esistenziale"
+    },
+	{
+		"id": 7,
+		"description": "Abitudini"
+    },
+	{
+		"id": 8,
+		"description": "Personalita - Attitudine"
+    },
+	{
+		"id": 9,
+		"description": "Autostima"
+    },
+	{
+		"id": 10,
+		"description": "Interessi"
+    },
+	{
+		"id": 11,
+		"description": "Aspetto"
     }
 ]
