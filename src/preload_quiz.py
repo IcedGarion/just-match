@@ -7,7 +7,7 @@ schema_category_json = "data/schema_category.json"
 
 if __name__ == "__main__":
     schema_category = json.load(open(schema_category_json))
-    cat = [ Category(id=category["category"],description=category["description"], weight=category["weight"]) for category in schema_category ]
+    cat = [ Category(id=category["category"],description=category["description"]) for category in schema_category ]
     
     db.session.add_all(cat)
     db.session.commit()

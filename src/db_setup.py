@@ -18,15 +18,38 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), nullable=False)
 
-# Pesi categorie
-class Category(db.Model):
+
+# Tipi di attivita' 
+@dataclass
+class Activity(db.Model):
     id: int
     description: str
-    weight: float
     
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String(250))
+
+# N:M activity-category: per ogni attivita' (gruppo/singolo/viaggi...) elenco di pesi da dare a tutte le categorie
+# TODO: per ogni attivita' devono essere elencati i pesi per TUTTE le categorie presenti in tab categorie: Left join con default isnull(weigth, 0)
+@dataclass
+class WeightCategory(db.Model):
+    id: int
+    activity_id: int
+    category_id: int
+    weight: float
+    
+    id = db.Column(db.Integer, primary_key=True)
+    activity_id = db.Column(db.Integer, db.ForeignKey('activity.id'), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
     weight = db.Column(db.Float, nullable=False)
+
+# Categorie di domande
+@dataclass
+class Category(db.Model):
+    id: int
+    description: str
+    
+    id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(250))
 
 # Schema quiz
 @dataclass
@@ -54,7 +77,7 @@ class UserQuiz(db.Model):
     question_id = db.Column(db.String(10), db.ForeignKey('quiz.question_id'), nullable=False)
     answer = db.Column(db.String(10), nullable=False)
 
-# Distanze calcolate fra utenti
+# Distanze calcolate fra utenti, all'interno di ogni categoria
 @dataclass
 class Distance(db.Model):
     user1_id: int

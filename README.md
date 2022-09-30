@@ -66,5 +66,5 @@ Return the top x "top" users nearest to the user specified by "id".<br><br>
 # TODO
 ### Caso in cui si aggiungono soltanto 1+ risposte NUOVE? 
 ### Fare in modo che calcolo distanza per nuovo quiz parta solo quando ha finito di inserire il nuovo quiz
-### Calcolare distanza globale (non a livello di categoria). In che punto farlo?
+### Calcolare distanza globale (non a livello di categoria). Fare una API apposta che prende input una attivita': calcola distanze globali coi pesi di quella attivita' rispetto a tutti gli altri user
 ### Includere nella tabella delle categorie i vari pesi e usarli per fare distanza totale a seconda delle situazioni
