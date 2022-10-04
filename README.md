@@ -83,6 +83,8 @@ Return the top x "top" users nearest to the user specified by "id".<br><br>
 ### Normalizzare distanze categoria
 ### API per recuperare max e min answer value, in modo da poter validare le risposte (sia frontend che be)
 
+### Elenco di abitudini con immagini
+
 ## Codice
 ### Caso in cui si aggiungono soltanto 1+ risposte NUOVE? 
 ### Fare in modo che calcolo distanza per nuovo quiz parta solo quando ha finito di inserire il nuovo quiz

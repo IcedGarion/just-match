@@ -162,3 +162,5 @@ cython_debug/
 notebook
 __pycache__
 *.db
+
+test

@@ -4,7 +4,7 @@ from db_setup import db, app, User, Quiz, Distance, ActivityDistance
 from quiz_config import app_host
 import service
 
-
+# USER
 @app.route("/users", methods=['GET'])
 def list_users():
     users = service.get_all_users()
@@ -23,15 +23,22 @@ def add_user():
     except AssertionError as e:
         return { "error":  "{}".format(str(e)) }, 409
 
+# ACTIVITY
 @app.route("/activity", methods=['GET'])
 def list_activities():
     activities = service.get_all_activities()
     return jsonify(activities)
 
+# CATEGORY
 @app.route("/category", methods=['GET'])
 def list_categories():
     categories = service.get_all_categories()
     return jsonify(categories)
+
+# QUIZ
+@app.route("/quiz", methods=['GET'])
+def list_quizzes():
+    return Quiz.query.all()
 
 @app.route("/quiz/<int:user_id>", methods=['POST'])
 def add_quiz(user_id):
@@ -40,7 +47,8 @@ def add_quiz(user_id):
         return jsonify(new_quiz)
     except AssertionError as e:
         return { "error":  "{}".format(str(e)) }, 404
-    
+
+# DISTANCE
 @app.route("/distance/<int:user_id>/<int:activity_id>/<int:top>", methods=['GET'])
 def get_nearest(user_id, activity_id, top):
     try:
@@ -49,9 +57,11 @@ def get_nearest(user_id, activity_id, top):
     except AssertionError as e:
         return { "error":  "{}".format(str(e)) }, 404
 
-@app.route("/quiz", methods=['GET'])
-def list_quizzes():
-    return Quiz.query.all()
+
+# HOBBY
+@app.route("/hobby", methods=['GET'])
+def list_hobbies():
+    return
 
 
 # solo per debug
