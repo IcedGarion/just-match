@@ -29,22 +29,26 @@
     },
 	{
 		"id": 7,
-		"description": "Abitudini"
+		"description": "Intelligenza spaziale"
     },
 	{
 		"id": 8,
-		"description": "Personalita - Attitudine"
+		"description": "Abitudini"
     },
 	{
 		"id": 9,
-		"description": "Autostima"
+		"description": "Personalita - Attitudine"
     },
 	{
 		"id": 10,
-		"description": "Interessi"
+		"description": "Autostima"
     },
 	{
 		"id": 11,
+		"description": "Interessi"
+    },
+	{
+		"id": 12,
 		"description": "Aspetto"
     }
 ]
