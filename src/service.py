@@ -61,17 +61,18 @@ def create_quiz(user_id: str, quiz_json):
     # recupera evantuale quiz gia' esistente per quel user
     user_quiz = UserQuiz.query.filter(UserQuiz.user_id == user_id).order_by(UserQuiz.question_id.asc()).all()
     
+
     # Aggiorna quiz gia esistente rimpiazzando tutto
     if len(user_quiz) != 0:
         # per ciascuna nuova risposta, modifica la vecchia risposta
         for answer in quiz_json:
             old_user_quiz =  UserQuiz.query.filter(UserQuiz.user_id == user_id).filter(UserQuiz.question_id == answer["id"]).first()
-            old_user_quiz.answer = answer["risposta"]
+            old_user_quiz.answer = answer["risposteText"]["value"]
         db.session.commit()
     
     # Aggiunge nuovo quiz
     else:
-        user_quiz = sorted([ UserQuiz(answer=answer["risposta"], question_id=answer["id"], user_id=user_id) for answer in quiz_json ], key=lambda x: x.question_id)
+        user_quiz = sorted([ UserQuiz(answer=answer["risposteText"]["value"], question_id=answer["idDomandaERisposta"], user_id=user_id) for answer in quiz_json ], key=lambda x: x.question_id)
         db.session.add_all(user_quiz)
         db.session.commit()
     

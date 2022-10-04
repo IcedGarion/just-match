@@ -1,52 +1,860 @@
 [
-    {
-        "question": "Sono in grado di chiudere gli occhi e raffigurarmi oggetti, luoghi o  avvenimenti",
-        "risposta": "4",
-        "id": "0"
-    },
-    {
-        "question": "Leggo più facilmente cartine, tabelle e diagrammi piuttosto che  indicazioni scritte",
-        "risposta": "4",
-        "id": "1"
-    },
-    {
-        "question": "Sogno ad occhi aperti più dei miei coetanei",
-        "risposta": "4",
-        "id": "2"
-    },
-    {
-        "question": "Mi piacciono le attività artistiche",
-        "risposta": "4",
-        "id": "3"
-    },
-    {
-        "question": "Disegno figure interessanti",
-        "risposta": "3",
-        "id": "4"
-    },
-    {
-        "question": "Mi piace vedere film, diapositive o altre rappresentazioni visive",
-        "risposta": "3",
-        "id": "5"
-    },
-    {
-        "question": " Mi piace fare puzzles, labirinti, dedali o analoghe attività visive",
-        "risposta": "2",
-        "id": "6"
-    },
-    {
-        "question": "Creo interessanti costruzioni tridimensionali",
-        "risposta": "2",
-        "id": "7"
-    },
-    {
-        "question": "Quando leggo mi dicono di più̀ le immagini delle parole",
-        "risposta": "3",
-        "id": "8"
-    },
-    {
-        "question": "Scarabocchio su libri di esercizi, schede e altro materiale",
-        "risposta": "4",
-        "id": "9"
-    }
+	{
+		"group": "Intelligenza spaziale",
+		"idDomandaERisposta": 0,
+		"domanda": "   Sono in grado di chiudere gli occhi e raffigurarmi oggetti luoghi o   avvenimenti",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza spaziale",
+		"idDomandaERisposta": 1,
+		"domanda": "   Leggo più facilmente cartine, tabelle e diagrammi piuttosto che  indicazioni scritte       ",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza spaziale",
+		"idDomandaERisposta": 2,
+		"domanda": "Sogno ad occhi aperti più dei miei coetanei",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Intelligenza spaziale",
+		"idDomandaERisposta": 3,
+		"domanda": "Mi piacciono le attività artistiche",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Intelligenza spaziale",
+		"idDomandaERisposta": 4,
+		"domanda": "Disegno figure interessanti",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza spaziale",
+		"idDomandaERisposta": 5,
+		"domanda": "         Mi piace vedere film diapositive o altre rappresentazioni visive       ",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza spaziale",
+		"idDomandaERisposta": 6,
+		"domanda": "         Mi piace fare puzzles, labirinti dedali o analoghe attività visive       ",
+		"risposteText": {
+			"value": 2,
+			"idcheckradiocss": "radio2",
+			"text": "un poì simile a me"
+		},
+		"rispostaValue": "3"
+	},
+	{
+		"group": "Intelligenza spaziale",
+		"idDomandaERisposta": 7,
+		"domanda": "Creo interessanti costruzioni tridimensionali",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza spaziale",
+		"idDomandaERisposta": 8,
+		"domanda": "Quando leggo mi dicono di più̀ le immagini delle parole",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza spaziale",
+		"idDomandaERisposta": 9,
+		"domanda": "Scarabocchio su libri di esercizi, schede e altro materiale",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza linguistica",
+		"idDomandaERisposta": 10,
+		"domanda": "La mia abilità nello scrivere superiore alla media",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Intelligenza linguistica",
+		"idDomandaERisposta": 11,
+		"domanda": "Mi piace raccontare barzellette e storielle",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Intelligenza linguistica",
+		"idDomandaERisposta": 12,
+		"domanda": "Ho buona memoria per nomi, luoghi, date o banalità",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza linguistica",
+		"idDomandaERisposta": 13,
+		"domanda": "Mi piacciono i giochi di parole",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza linguistica",
+		"idDomandaERisposta": 14,
+		"domanda": "Mi piace leggere libri",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza linguistica",
+		"idDomandaERisposta": 15,
+		"domanda": "Scrivo correttamente le parole (nella maggior parte dei casi)",
+		"risposteText": {
+			"value": 2,
+			"idcheckradiocss": "radio2",
+			"text": "un poì simile a me"
+		},
+		"rispostaValue": "3"
+	},
+	{
+		"group": "Intelligenza linguistica",
+		"idDomandaERisposta": 16,
+		"domanda": "Mi divertono le rime, gli scioglilingua, ecc",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza linguistica",
+		"idDomandaERisposta": 17,
+		"domanda": "        Mi piace ascoltare il parlato (storie, commenti alla radio, libri su        cassetta, ecc.)      ",
+		"risposteText": {
+			"value": 2,
+			"idcheckradiocss": "radio2",
+			"text": "un poì simile a me"
+		},
+		"rispostaValue": "3"
+	},
+	{
+		"group": "Intelligenza linguistica",
+		"idDomandaERisposta": 18,
+		"domanda": "Ho un buon lessico",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza linguistica",
+		"idDomandaERisposta": 19,
+		"domanda": "        Preferisco esporre le mie idee oralmente piuttosto che scriverle      ",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza Emotiva e interpersonale",
+		"idDomandaERisposta": 20,
+		"domanda": "Mi piace socializzare",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Intelligenza Emotiva e interpersonale",
+		"idDomandaERisposta": 21,
+		"domanda": "Mi viene naturale fare il leader",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza Emotiva e interpersonale",
+		"idDomandaERisposta": 22,
+		"domanda": "I miei amici mi chiedono spesso consigli",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza Emotiva e interpersonale",
+		"idDomandaERisposta": 23,
+		"domanda": "Ho due o più̀ amici intimi",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza Emotiva e interpersonale",
+		"idDomandaERisposta": 24,
+		"domanda": "Intuisco velocemente i sentimenti delle persone intorno a me",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Intelligenza Emotiva e interpersonale",
+		"idDomandaERisposta": 25,
+		"domanda": "Le persone cercano spesso la mia compagnia",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Intelligenza Emotiva e interpersonale",
+		"idDomandaERisposta": 26,
+		"domanda": "Non mi faccio fregare facilmente dalla gente",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza Emotiva e interpersonale",
+		"idDomandaERisposta": 27,
+		"domanda": "Mi piace insegnare ad altri in modo informale",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza Emotiva e interpersonale",
+		"idDomandaERisposta": 28,
+		"domanda": "Mi piace giocare con i miei amici",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Intelligenza intrapersonale emotiva",
+		"idDomandaERisposta": 29,
+		"domanda": "          Mi piace lavorare con l’argilla o svolgere altre attività̀ con le mani        ",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza intrapersonale emotiva",
+		"idDomandaERisposta": 30,
+		"domanda": "Sto meglio se vengo lasciato da solo a studiare o a giocare",
+		"risposteText": {
+			"value": 2,
+			"idcheckradiocss": "radio2",
+			"text": "un poì simile a me"
+		},
+		"rispostaValue": "3"
+	},
+	{
+		"group": "Intelligenza intrapersonale emotiva",
+		"idDomandaERisposta": 31,
+		"domanda": "          Non mi crea problemi avere un mio stile di vita o di apprendimento        ",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Intelligenza intrapersonale emotiva",
+		"idDomandaERisposta": 32,
+		"domanda": "Ho un interesse o un hobby di cui non parlo molto",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza intrapersonale emotiva",
+		"idDomandaERisposta": 33,
+		"domanda": "          Sono capace di lavorare da solo, senza troppe indicazioni altrui        ",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza intrapersonale emotiva",
+		"idDomandaERisposta": 34,
+		"domanda": "Preferisco lavorare da solo che con altri",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza intrapersonale emotiva",
+		"idDomandaERisposta": 35,
+		"domanda": "So descrivere accuratamente come mi sento",
+		"risposteText": {
+			"value": 0,
+			"idcheckradiocss": "radio0",
+			"text": "non sono io"
+		},
+		"rispostaValue": "1"
+	},
+	{
+		"group": "Intelligenza intrapersonale emotiva",
+		"idDomandaERisposta": 36,
+		"domanda": "So imparare dai fallimenti e dai successi della vita",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza intrapersonale emotiva",
+		"idDomandaERisposta": 37,
+		"domanda": "Di solito mi piaccio",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "0"
+	},
+	{
+		"group": "Intelligenza cinestetica ambientale",
+		"idDomandaERisposta": 38,
+		"domanda": "Eccello in uno o più sport",
+		"risposteText": {
+			"value": 0,
+			"idcheckradiocss": "radio0",
+			"text": "non sono io"
+		},
+		"rispostaValue": "1"
+	},
+	{
+		"group": "Intelligenza cinestetica ambientale",
+		"idDomandaERisposta": 39,
+		"domanda": "          Mi muovo, mi agito, tamburello con le dita quando sono seduto a lungo          in un posto        ",
+		"risposteText": {
+			"value": 2,
+			"idcheckradiocss": "radio2",
+			"text": "un poì simile a me"
+		},
+		"rispostaValue": "3"
+	},
+	{
+		"group": "Intelligenza cinestetica ambientale",
+		"idDomandaERisposta": 40,
+		"domanda": "Sono abile ad imitare i gesti o i modi di fare di altre persone",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Intelligenza cinestetica ambientale",
+		"idDomandaERisposta": 41,
+		"domanda": "Mi piace disfare le cose e poi rimetterle insieme",
+		"rispostaValue": "0",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		}
+	},
+	{
+		"group": "Intelligenza cinestetica ambientale",
+		"idDomandaERisposta": 42,
+		"domanda": "Mi piace toccare le cose che sto guardando",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza cinestetica ambientale",
+		"idDomandaERisposta": 43,
+		"domanda": "Mi diverte correre, saltare, fare la lotta o attività̀ analoghe",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Intelligenza cinestetica ambientale",
+		"idDomandaERisposta": 44,
+		"domanda": "          Sono bravo nelle attività̀ manuali (la lavorazione del legno, il          cucito, la meccanica)        ",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Intelligenza cinestetica ambientale",
+		"idDomandaERisposta": 45,
+		"domanda": "          Quando parlo uso molto i movimenti del corpo e le espressioni del viso        ",
+		"risposteText": {
+			"value": 0,
+			"idcheckradiocss": "radio0",
+			"text": "non sono io"
+		},
+		"rispostaValue": "1"
+	},
+	{
+		"group": "Intelligenza cinestetica ambientale",
+		"idDomandaERisposta": 46,
+		"domanda": "          Talvolta, quando sto pensando o studiando, provo sensazioni fisiche          diverse        ",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Intelligenza cinestetica ambientale",
+		"idDomandaERisposta": 47,
+		"domanda": "          Mi piace lavorare con l’argilla o svolgere altre attività̀ con le mani        ",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 48,
+		"domanda": " 1. Mi sento soddisfatto del mio lavoro attuale       ",
+		"risposteText": {
+			"value": 2,
+			"idcheckradiocss": "radio2",
+			"text": "un poì simile a me"
+		},
+		"rispostaValue": "3"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 49,
+		"domanda": "        2. Mi sento soddisfatto del mio percorso professionale e delle        prospettive future",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 50,
+		"domanda": "        3. Sono disposto a rischiare",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 51,
+		"domanda": "        4. Ritengo importante proseguire la mia istruzione",
+		"risposteText": {
+			"value": 0,
+			"idcheckradiocss": "radio0",
+			"text": "non sono io"
+		},
+		"rispostaValue": "1"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 52,
+		"domanda": "        5. Generalmente cerco di riconoscere le qualità positive negli altri.       ",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 53,
+		"domanda": "        6. Riesco a portare a termine quello che comincio",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 54,
+		"domanda": "        7. Mi sento a mio agio in nuove situazioni sociali",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 55,
+		"domanda": "        8. Accetto e apprezzo i complimenti che ricevo",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 56,
+		"domanda": "        9. Non ho difficoltà ad esprimere la mia opinione di fronte agli altri       ",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 57,
+		"domanda": "        10. Riconosco i miei successi",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 58,
+		"domanda": "        11. Sono una persona ottimista",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 59,
+		"domanda": "        12. Sono una persona lungimirante",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 60,
+		"domanda": "        13. Sono in grado di prendere decisioni",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 61,
+		"domanda": "        14. Godo di una buona condizione fisica",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 62,
+		"domanda": "        15. Sono rispettato dagli altri così come sono",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 63,
+		"domanda": "        16. Mi propongo agli altri in modo positivo",
+		"risposteText": {
+			"value": 1,
+			"idcheckradiocss": "radio1",
+			"text": "per nulla simile a me"
+		},
+		"rispostaValue": "2"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 64,
+		"domanda": "        17. Sono un buon ascoltatore",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 65,
+		"domanda": "        18. Sono responsabile delle mie scelte e delle mie azioni",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 66,
+		"domanda": "        19. Mi piacciono le discussioni controverse",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 67,
+		"domanda": "        20. Riesco ad affrontare i miei errori con umorismo",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 68,
+		"domanda": "        21. Non ho difficoltà a chiedere aiuto quando ne ho bisogno",
+		"risposteText": {
+			"value": 3,
+			"idcheckradiocss": "radio3",
+			"text": "piuttosto simile a me"
+		},
+		"rispostaValue": "4"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 69,
+		"domanda": "        22. Considero gli ostacoli una sfida stimolante",
+		"risposteText": {
+			"value": 2,
+			"idcheckradiocss": "radio2",
+			"text": "un poì simile a me"
+		},
+		"rispostaValue": "3"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 70,
+		"domanda": "        23. Sono responsabile dei miei pensieri e delle mie azioni",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 71,
+		"domanda": "        24. Esprimo i miei sentimenti in maniera diretta",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 72,
+		"domanda": "        25. Conduco una vita equilibrata",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 73,
+		"domanda": "        26. Affronto la vita con entusiasmo",
+		"risposteText": {
+			"value": 4,
+			"idcheckradiocss": "radio4",
+			"text": "molto simile a me"
+		},
+		"rispostaValue": "5"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 74,
+		"domanda": "        27. Quando parla con una persona la guardo negli occhi",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 75,
+		"domanda": "        28. Mi piaccio così come sono",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 76,
+		"domanda": "        29. Ho cura del mio aspetto fisico",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	},
+	{
+		"group": "Autostima e fiducia",
+		"idDomandaERisposta": 77,
+		"domanda": "        30. Mi mantengo in forma",
+		"risposteText": {
+			"value": 5,
+			"idcheckradiocss": "radio5",
+			"text": "completamente simile a me"
+		},
+		"rispostaValue": "6"
+	}
 ]

@@ -61,7 +61,10 @@ def get_nearest(user_id, activity_id, top):
 # HOBBY
 @app.route("/hobby", methods=['GET'])
 def list_hobbies():
-    return
+    hobby_file = open("docs/dataset_hobbies.csv")
+    for h in hobby_file.readline():
+        print(h)
+        
 
 
 # solo per debug

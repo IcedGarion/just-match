@@ -126,5 +126,19 @@ class ActivityDistance(db.Model):
     user2_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key = True)
     activity_id = db.Column(db.Integer, db.ForeignKey('activity.id'), primary_key = True)
     distance = db.Column(db.Float, nullable=False)
-    
+
+# Hobby + immagini
+@dataclass
+class Hobby(db.Model):
+    id: int
+    name: str
+    description: str
+    img_url: str
+
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.String(250))
+    img_url = db.Column(db.Text(100))
+
+
 db.create_all()

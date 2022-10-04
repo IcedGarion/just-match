@@ -1,47 +1,344 @@
 [
-    {
-		"category": 0,
+	{
+		"category": 7,
 		"quiz": [
-		    {
-				"question": "Sono in grado di chiudere gli occhi e raffigurarmi oggetti, luoghi o  avvenimenti",
-				"id": "0"
+			{
+				"question": "Sono in grado di chiudere gli occhi e raffigurarmi oggetti luoghi o avvenimenti",
+				"id": 0
 			},
 			{
-				"question": "Leggo più facilmente cartine, tabelle e diagrammi piuttosto che  indicazioni scritte",
-				"id": "1"
+				"question": "Leggo più facilmente cartine, tabelle e diagrammi piuttosto che indicazioni scritte ",
+				"id": 1
 			},
 			{
 				"question": "Sogno ad occhi aperti più dei miei coetanei",
-				"id": "2"
+				"id": 2
 			},
 			{
 				"question": "Mi piacciono le attività artistiche",
-				"id": "3"
+				"id": 3
 			},
 			{
 				"question": "Disegno figure interessanti",
-				"id": "4"
+				"id": 4
 			},
 			{
-				"question": "Mi piace vedere film, diapositive o altre rappresentazioni visive",
-				"id": "5"
+				"question": " Mi piace vedere film diapositive o altre rappresentazioni visive ",
+				"id": 5
 			},
 			{
-				"question": " Mi piace fare puzzles, labirinti, dedali o analoghe attività visive",
-				"id": "6"
+				"question": " Mi piace fare puzzles, labirinti dedali o analoghe attività visive ",
+				"id": 6
 			},
 			{
 				"question": "Creo interessanti costruzioni tridimensionali",
-				"id": "7"
+				"id": 7
 			},
 			{
 				"question": "Quando leggo mi dicono di più̀ le immagini delle parole",
-				"id": "8"
+				"id": 8
 			},
 			{
 				"question": "Scarabocchio su libri di esercizi, schede e altro materiale",
-				"id": "9"
+				"id": 9
 			}
 		]
-    }
+	},
+	{
+		"category": 0,
+		"quiz": [
+			{
+				"question": "La mia abilità nello scrivere superiore alla media",
+				"id": 10
+			},
+			{
+				"question": "Mi piace raccontare barzellette e storielle",
+				"id": 11
+			},
+			{
+				"question": "Ho buona memoria per nomi, luoghi, date o banalità",
+				"id": 12
+			},
+			{
+				"question": "Mi piacciono i giochi di parole",
+				"id": 13
+			},
+			{
+				"question": "Mi piace leggere libri",
+				"id": 14
+			},
+			{
+				"question": "Scrivo correttamente le parole (nella maggior parte dei casi)",
+				"id": 15
+			},
+			{
+				"question": "Mi divertono le rime, gli scioglilingua, ecc",
+				"id": 16
+			},
+			{
+				"question": " Mi piace ascoltare il parlato (storie, commenti alla radio, libri su cassetta, ecc.) ",
+				"id": 17
+			},
+			{
+				"question": "Ho un buon lessico",
+				"id": 18
+			},
+			{
+				"question": " Preferisco esporre le mie idee oralmente piuttosto che scriverle ",
+				"id": 19
+			}
+		]
+	},
+	{
+		"category": 2,
+		"quiz": [
+			{
+				"question": "Mi piace socializzare",
+				"id": 20
+			},
+			{
+				"question": "Mi viene naturale fare il leader",
+				"id": 21
+			},
+			{
+				"question": "I miei amici mi chiedono spesso consigli",
+				"id": 22
+			},
+			{
+				"question": "Ho due o più̀ amici intimi",
+				"id": 23
+			},
+			{
+				"question": "Intuisco velocemente i sentimenti delle persone intorno a me",
+				"id": 24
+			},
+			{
+				"question": "Le persone cercano spesso la mia compagnia",
+				"id": 25
+			},
+			{
+				"question": "Non mi faccio fregare facilmente dalla gente",
+				"id": 26
+			},
+			{
+				"question": "Mi piace insegnare ad altri in modo informale",
+				"id": 27
+			},
+			{
+				"question": "Mi piace giocare con i miei amici",
+				"id": 28
+			}
+		]
+	},
+	{
+		"category": 3,
+		"quiz": [
+			{
+				"question": " Mi piace lavorare con l’argilla o svolgere altre attività̀ con le mani ",
+				"id": 29
+			},
+			{
+				"question": "Sto meglio se vengo lasciato da solo a studiare o a giocare",
+				"id": 30
+			},
+			{
+				"question": " Non mi crea problemi avere un mio stile di vita o di apprendimento ",
+				"id": 31
+			},
+			{
+				"question": "Ho un interesse o un hobby di cui non parlo molto",
+				"id": 32
+			},
+			{
+				"question": " Sono capace di lavorare da solo, senza troppe indicazioni altrui ",
+				"id": 33
+			},
+			{
+				"question": "Preferisco lavorare da solo che con altri",
+				"id": 34
+			},
+			{
+				"question": "So descrivere accuratamente come mi sento",
+				"id": 35
+			},
+			{
+				"question": "So imparare dai fallimenti e dai successi della vita",
+				"id": 36
+			},
+			{
+				"question": "Di solito mi piaccio",
+				"id": 37
+			}
+		]
+	},
+	{
+		"category": 5,
+		"quiz": [
+			{
+				"question": "Eccello in uno o più sport",
+				"id": 38
+			},
+			{
+				"question": " Mi muovo, mi agito, tamburello con le dita quando sono seduto a lungo in un posto ",
+				"id": 39
+			},
+			{
+				"question": "Sono abile ad imitare i gesti o i modi di fare di altre persone",
+				"id": 40
+			},
+			{
+				"question": "Mi piace disfare le cose e poi rimetterle insieme",
+				"id": 41
+			},
+			{
+				"question": "Mi piace toccare le cose che sto guardando",
+				"id": 42
+			},
+			{
+				"question": "Mi diverte correre, saltare, fare la lotta o attività̀ analoghe",
+				"id": 43
+			},
+			{
+				"question": " Sono bravo nelle attività̀ manuali (la lavorazione del legno, il cucito, la meccanica) ",
+				"id": 44
+			},
+			{
+				"question": " Quando parlo uso molto i movimenti del corpo e le espressioni del viso ",
+				"id": 45
+			},
+			{
+				"question": " Talvolta, quando sto pensando o studiando, provo sensazioni fisiche diverse ",
+				"id": 46
+			},
+			{
+				"question": " Mi piace lavorare con l’argilla o svolgere altre attività̀ con le mani ",
+				"id": 47
+			}
+		]
+	},
+	{
+		"category": 10,
+		"quiz": [
+			{
+				"question": " 1. Mi sento soddisfatto del mio lavoro attuale ",
+				"id": 48
+			},
+			{
+				"question": " 2. Mi sento soddisfatto del mio percorso professionale e delle prospettive future",
+				"id": 49
+			},
+			{
+				"question": " 3. Sono disposto a rischiare",
+				"id": 50
+			},
+			{
+				"question": " 4. Ritengo importante proseguire la mia istruzione",
+				"id": 51
+			},
+			{
+				"question": " 5. Generalmente cerco di riconoscere le qualità positive negli altri. ",
+				"id": 52
+			},
+			{
+				"question": " 6. Riesco a portare a termine quello che comincio",
+				"id": 53
+			},
+			{
+				"question": " 7. Mi sento a mio agio in nuove situazioni sociali",
+				"id": 54
+			},
+			{
+				"question": " 8. Accetto e apprezzo i complimenti che ricevo",
+				"id": 55
+			},
+			{
+				"question": " 9. Non ho difficoltà ad esprimere la mia opinione di fronte agli altri ",
+				"id": 56
+			},
+			{
+				"question": " 10. Riconosco i miei successi",
+				"id": 57
+			},
+			{
+				"question": " 11. Sono una persona ottimista",
+				"id": 58
+			},
+			{
+				"question": " 12. Sono una persona lungimirante",
+				"id": 59
+			},
+			{
+				"question": " 13. Sono in grado di prendere decisioni",
+				"id": 60
+			},
+			{
+				"question": " 14. Godo di una buona condizione fisica",
+				"id": 61
+			},
+			{
+				"question": " 15. Sono rispettato dagli altri così come sono",
+				"id": 62
+			},
+			{
+				"question": " 16. Mi propongo agli altri in modo positivo",
+				"id": 63
+			},
+			{
+				"question": " 17. Sono un buon ascoltatore",
+				"id": 64
+			},
+			{
+				"question": " 18. Sono responsabile delle mie scelte e delle mie azioni",
+				"id": 65
+			},
+			{
+				"question": " 19. Mi piacciono le discussioni controverse",
+				"id": 66
+			},
+			{
+				"question": " 20. Riesco ad affrontare i miei errori con umorismo",
+				"id": 67
+			},
+			{
+				"question": " 21. Non ho difficoltà a chiedere aiuto quando ne ho bisogno",
+				"id": 68
+			},
+			{
+				"question": " 22. Considero gli ostacoli una sfida stimolante",
+				"id": 69
+			},
+			{
+				"question": " 23. Sono responsabile dei miei pensieri e delle mie azioni",
+				"id": 70
+			},
+			{
+				"question": " 24. Esprimo i miei sentimenti in maniera diretta",
+				"id": 71
+			},
+			{
+				"question": " 25. Conduco una vita equilibrata",
+				"id": 72
+			},
+			{
+				"question": " 26. Affronto la vita con entusiasmo",
+				"id": 73
+			},
+			{
+				"question": " 27. Quando parla con una persona la guardo negli occhi",
+				"id": 74
+			},
+			{
+				"question": " 28. Mi piaccio così come sono",
+				"id": 75
+			},
+			{
+				"question": " 29. Ho cura del mio aspetto fisico",
+				"id": 76
+			},
+			{
+				"question": "30. Mi mantengo in forma",
+				"id": 77
+			}
+		]
+	}
 ]

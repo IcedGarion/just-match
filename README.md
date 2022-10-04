@@ -93,3 +93,5 @@ Return the top x "top" users nearest to the user specified by "id".<br><br>
 ## Errori
 ### TODO1: Se user compila solo parte del quiz, quando calcola le distanze cerca comunque tutte le categorie. Fare in modo che i calcoli distanza per categoria e distanza globale usino solo le categorie compilate
 ### Cosi come succede per il calcolo distanze categoria, se un utente aggiorna quiz viene AGGIORNATA la distanza, va implementato anche per activityDistance: cioe se le distanze cambiano, deve poter aggiornare activityDistance se esiste gia, invece di "sovrascrivere" (cosa che non succederebbe perche' ci sarebbe primary key violation)
+
+### Chiedendo le distanze per varie diverse attivita', il risultato è sempre comunque 0.25, è un caso oppure è sbagliato il calcolo?
